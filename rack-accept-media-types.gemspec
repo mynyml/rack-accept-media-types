@@ -26,7 +26,7 @@ files:
 - test
 - test/test_accept_media_types.rb
 - test/test_helper.rb
-- examples
+- rack-accept-media-types.gemspec
 - lib
 - lib/rack
 - lib/rack/accept_media_types.rb
