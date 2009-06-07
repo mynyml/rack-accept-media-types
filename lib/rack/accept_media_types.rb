@@ -10,7 +10,7 @@ module Rack
   #
   # ===== Examples
   #
-  #   env['HTTP_ACCEPT']  #=> 'text/html,application/xml;q=0.8,text/plain;0.9'
+  #   env['HTTP_ACCEPT']  #=> 'application/xml;q=0.8,text/html,text/plain;q=0.9'
   #
   #   types = Rack::AcceptMediaTypes.new(env['HTTP_ACCEPT'])
   #   types               #=> ['text/html', 'text/plain', 'application/xml']
