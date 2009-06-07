@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: rack-accept-media-types
 version: !ruby/object:Gem::Version 
-  version: "0.5"
+  version: 0.5.1
 platform: ruby
 authors: 
 - Martin Aumont
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-06-05 00:00:00 -04:00
+date: 2009-06-06 00:00:00 -04:00
 default_executable: 
 dependencies: []
 
@@ -31,6 +31,7 @@ files:
 - lib/rack
 - lib/rack/accept_media_types.rb
 - LICENSE
+- examples.rb
 - README
 has_rdoc: true
 homepage: ""

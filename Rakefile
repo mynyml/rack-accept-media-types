@@ -22,7 +22,7 @@ end
 
 spec = Gem::Specification.new do |s|
   s.name            = 'rack-accept-media-types'
-  s.version         = '0.5'
+  s.version         = '0.5.1'
   s.summary         = "Rack convenience middleware for simplified handling of Accept header."
   s.description     = "Rack convenience middleware for simplified handling of Accept header."
   s.author          = "Martin Aumont"
