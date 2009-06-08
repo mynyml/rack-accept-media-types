@@ -30,8 +30,19 @@ module Rack
   #
   class AcceptMediaTypes < Array
 
+    #--
+    # NOTE
+    # Reason for special handling of nil accept header:
+    #
+    # "If no Accept header field is present, then it is assumed that the client
+    # accepts all media types."
+    #
     def initialize(header)
-      replace(order(header.split(',')))
+      if header.nil?
+        replace(['*/*'])
+      else
+        replace(order(header.split(',')))
+      end
     end
 
     # The client's prefered media type.

@@ -53,6 +53,21 @@ class AcceptMediaTypesTest < Test::Unit::TestCase
     header = 'text/html;q=0.5;token=value,text/plain'
     assert_equal %w( text/plain text/html ), Accept.new(header)
   end
+
+  test "nil accept header" do
+    header = nil
+    assert_equal %w( */* ), Accept.new(header)
+  end
+
+  test "empty accept header" do
+    header = ''
+    assert_equal [], Accept.new(header)
+  end
+
+  test "all accepted types are invalid" do
+    header = 'text/html;q=2,application/xml;q=0'
+    assert_equal [], Accept.new(header)
+  end
 end
 
 __END__
