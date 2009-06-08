@@ -36,3 +36,21 @@ example do
   types.prefered
   #=> "application/xml"
 end
+
+# no accept header means client accepts all types (rfc2616-sec14.1)
+env = {'HTTP_ACCEPT' => nil}
+example do
+  types = Rack::AcceptMediaTypes.new(env['HTTP_ACCEPT'])
+  #=> ["*/*"]
+  types.prefered
+  #=> "*/*"
+end
+
+# to avoid getting a wildcard media-range, pass an empty string instead
+env = {'HTTP_ACCEPT' => nil}
+example do
+  types = Rack::AcceptMediaTypes.new(env['HTTP_ACCEPT'] || '')
+  #=> []
+  types.prefered
+  #=> nil
+end
