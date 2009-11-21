@@ -9,15 +9,15 @@ type (see example below).
 
 ===== Install
 
-  gem install mynyml-rack-accept-media-types --source=http://gems.github.com/
+  gem install rack-accept-media-types --source http://gemcutter.org
 
 ===== Examples
 
   env['HTTP_ACCEPT']  #=> 'application/xml;q=0.8,text/html,text/plain;q=0.9'
 
-  types = Rack::AcceptMediaTypes.new(env['HTTP_ACCEPT'])
-  types               #=> ['text/html', 'text/plain', 'application/xml']
-  types.prefered      #=>  'text/html'
+  req = Rack::Request.new(env)
+  req.accept_media_types          #=> ['text/html', 'text/plain', 'application/xml']
+  req.accept_media_types.prefered #=>  'text/html'
 
 ===== Links
 

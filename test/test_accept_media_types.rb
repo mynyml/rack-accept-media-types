@@ -68,6 +68,19 @@ class AcceptMediaTypesTest < MiniTest::Unit::TestCase
     header = 'text/html;q=2,application/xml;q=0'
     assert_equal [], Accept.new(header)
   end
+
+  test "Request class integration" do
+    env = {'HTTP_ACCEPT' => 'text/html;q=0.5;token=value,text/plain'}
+    assert_equal %w( text/plain text/html ), Rack::Request.new(env).accept_media_types
+  end
+
+  test "memoizes request's accept_media_types" do
+    env = {'HTTP_ACCEPT' => 'text/html;q=0.5;token=value,text/plain'}
+    req = Rack::Request.new(env)
+    types1 = req.accept_media_types
+    types2 = req.accept_media_types
+    assert_same types1, types2
+  end
 end
 
 __END__
