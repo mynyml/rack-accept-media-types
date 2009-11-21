@@ -2,7 +2,7 @@ require 'test/test_helper'
 
 Accept = Rack::AcceptMediaTypes
 
-class AcceptMediaTypesTest < Test::Unit::TestCase
+class AcceptMediaTypesTest < MiniTest::Unit::TestCase
 
   test "media type list" do
     header = 'text/html,text/plain'
