@@ -1,0 +1,11 @@
+.gitignore
+LICENSE
+Manifest
+README
+Rakefile
+examples.rb
+lib/rack/accept_media_types.rb
+rack-accept-media-types.gemspec
+specs.watchr
+test/test_accept_media_types.rb
+test/test_helper.rb
