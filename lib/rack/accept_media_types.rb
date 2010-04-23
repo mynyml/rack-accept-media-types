@@ -64,7 +64,7 @@ module Rack
       if header.nil?
         replace(['*/*'])
       else
-        replace(order(header.split(',')))
+        replace(order(header.gsub(/ /, '').split(/,/)))
       end
     end
 

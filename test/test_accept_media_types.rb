@@ -8,6 +8,11 @@ class AcceptMediaTypesTest < MiniTest::Unit::TestCase
     header = 'text/html,text/plain'
     assert_equal %w( text/html text/plain ).to_set, Accept.new(header).to_set
   end
+  
+  test "also works with spaces" do
+    header = 'text/html, text/plain'
+    assert_equal %w( text/html text/plain ).to_set, Accept.new(header).to_set
+  end
 
   test "ordered by quality value (highest first)" do
     header = 'text/html;q=0.5,text/plain;q=0.9'
